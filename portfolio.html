@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Your Name</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your stylesheet -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<style>
+    /* Portfolio Section Styles */
+    body {
+        background-color: #000000; 
+        color: #ffffff; 
+        font-family: 'Segoe UI', sans-serif; 
+    }
+    .logo-image {
+        width: 100px; /* Adjust the size as needed */
+        height: auto; /* Keeps the aspect ratio intact */
+        border-radius: 15px; /* Adjust the value for more/less roundness */
+    }
+    /* Navigation */
+/* Navigation */
+.glass-nav {
+    background: black;
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+}
+.glass-nav .nav-link {
+    color: #ffffff !important; /* Force white color */
+    text-decoration: none !important;
+    font-size: 1.2rem !important;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    height: 60px; /* Add height to prevent logo from affecting layout */
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    height: 100%; /* Ensure logo does not impact container height */
+}
+
+.logo-img {
+    height: 100px; /* Adjust logo size */
+    width: auto;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-link {
+    color: var(--text);
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: #00ff9d;
+    left: 0;
+    bottom: -5px;
+    transition: width 0.4s ease 0.3s;
+}
+
+.nav-link:hover {
+    color: #00ff9d;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+
+.portfolio-section {
+    background-color: #000000; 
+    padding: 3rem 0; 
+    color: #fff; 
+}
+
+.portfolio-section .section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #00ff9d; /* Your primary color */
+    margin-bottom: 1rem;
+}
+
+.portfolio-section .section-description {
+    text-align: center;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    color: #888; /* Secondary text color */
+}
+
+.portfolio-items {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.portfolio-item {
+    background-color: #1a1a1a; /* Dark background for the portfolio items */
+    border-radius: 10px;
+    overflow: hidden;
+    width: calc(33% - 1.33rem); /* Adjust the width to make items responsive */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.portfolio-item:hover {
+    transform: translateY(-10px);
+}
+
+.portfolio-img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.portfolio-info {
+    padding: 1.5rem;
+}
+
+.portfolio-title {
+    font-size: 1.8rem;
+    color: #00ff9d; /* Your primary color */
+    margin-bottom: 1rem;
+}
+
+.portfolio-description {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    color: #888; /* Secondary text color */
+}
+
+.portfolio-link {
+    color: #00ff9d; /* Your primary color */
+    font-size: 1.1rem;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.portfolio-link:hover {
+    color: #fff; /* Hover effect for the link */
+}
+
+/* Footer Styles */
+.footer {
+    background-color: #000000; /* Black background */
+    padding: 2rem 0;
+    color: #fff; /* White text color */
+    text-align: center;
+    border-top: 2px solid #00ff9d; /* Primary color border on top */
+}
+
+.footer .footer-logo img {
+    max-width: 150px;
+    margin-bottom: 1rem;
+}
+
+.footer p {
+    font-size: 1rem;
+    color: #888; /* Secondary text color */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .portfolio-item {
+        width: calc(50% - 1.33rem); /* Two items per row on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .portfolio-item {
+        width: 100%; /* One item per row on very small screens */
+    }
+}
+
+</style>
+<body>
+    <nav class="glass-nav">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="p1-removebg-preview.png" alt="Logo" class="logo-img">
+            </a>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="blog.html" class="nav-link">Blog</a>
+            </div>
+        </div>
+    </nav>
+    
+    
+
+    <section class="portfolio-section">
+        <div class="container">
+            <h1 class="section-title">My Portfolio</h1>
+            <p class="section-description">Explore my work across various data analytics projects, from business intelligence solutions to data visualizations and more.</p>
+
+            <div class="portfolio-items">
+                <!-- Portfolio Item 1 -->
+                <div class="portfolio-item">
+                    <img src="python.jpg" alt="Project 1" class="portfolio-img">
+                    <div class="portfolio-info">
+                        <h3 class="portfolio-title">Data Analysis with Python</h3>
+                        <p class="portfolio-description">Analyzed large datasets to uncover insights and build predictive models using Python's data libraries.</p>
+                        <a href="https://github.com/DdyFash/PYTHON-RETAIL-SALES-EDA-PROJECT-" class="portfolio-link">View Project</a>
+                    </div>
+                </div>
+
+                <!-- Portfolio Item 2 -->
+                <div class="portfolio-item">
+                    <img src="Sales Management Dashboard - Deskboard.jpeg" alt="Project 2" class="portfolio-img">
+                    <div class="portfolio-info">
+                        <h3 class="portfolio-title">Business Intelligence Dashboard</h3>
+                        <p class="portfolio-description">Developed interactive dashboards using Power BI to visualize key business metrics and trends.</p>
+                        <a href="project2.html" class="portfolio-link">View Project</a>
+                    </div>
+                </div>
+
+                <!-- Portfolio Item 3 -->
+                <div class="portfolio-item">
+                    <img src="sql.jpg" alt="Project 3" class="portfolio-img">
+                    <div class="portfolio-info">
+                        <h3 class="portfolio-title">SQL Data Querying</h3>
+                        <p class="portfolio-description">Used SQL to extract, clean, and analyze large datasets to provide actionable business insights.</p>
+                        <a href="https://github.com/DdyFash?tab=repositories" class="portfolio-link">View Project</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <!-- Footer Section -->
+        <div class="footer-content">
+            <p>&copy; 2025 Your Name. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script> <!-- Optional script for interactive elements -->
+</body>
+</html>

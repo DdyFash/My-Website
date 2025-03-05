@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>David Fashakin - Data Analyst</title>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="script.js"></script>
+    <style>
+        /* CSS Styles */
+        /* Modern Navigation */
+        .logo-image {
+            width: 100px; /* Adjust the size as needed */
+            height: auto; /* Keeps the aspect ratio intact */
+            border-radius: 15px; /* Adjust the value for more/less roundness */
+        }
+        
+.glass-nav .nav-link {
+    color: #ffffff !important; /* Force white color */
+    text-decoration: none !important;
+    font-size: 1.2rem !important;
+}
+
+.glass-nav .hover-underline::after {
+    background: #00ff9d !important; /* Your desired hover color */
+}
+
+.glass-nav .nav-link:hover {
+    color: #00ff9d !important; /* Text color on hover */
+}
+
+/* For the button-link */
+.glass-nav .button-link {
+    background: #00ff9d !important;
+    color: #000000 !important; /* Dark text for contrast */
+}
+
+.glass-nav .button-link:hover {
+    opacity: 0.9 !important;
+    color: #000000 !important;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.hover-underline {
+    position: relative;
+    padding: 0.5rem 0;
+}
+
+.hover-underline::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary);
+    transition: width 0.3s ease;
+}
+
+.hover-underline:hover::after {
+    width: 100%;
+}
+
+.button-link {
+    background: var(--primary);
+    color: var(--dark-bg) !important;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    transition: transform 0.3s;
+}
+
+.button-link:hover {
+    transform: translateY(-2px);
+}
+        :root {
+            --primary: #00ff9d;
+            --dark-bg: #0a0a0a;
+            --card-bg: #1a1a1a;
+            --text: #e0e0e0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            margin-top: -150px;
+            padding: 2rem;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 1s forwards;
+            animation-delay: 0.3s;
+        }
+
+        .name {
+            font-size: 4rem;
+            background: linear-gradient(45deg, var(--primary), #00ccff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+            letter-spacing: -2px;
+        }
+
+        .title {
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0;
+            animation: slideLeft 1s forwards;
+            animation-delay: 0.5s;
+        }
+
+        .bio {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0;
+            animation: slideRight 1s forwards;
+            animation-delay: 0.7s;
+            max-width: 600px;
+        }
+
+        .skills {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+            animation-delay: 1s;
+        }
+
+        .skill-tag {
+            background: rgba(0, 255, 157, 0.1);
+            padding: 0.5rem 1.2rem;
+            border-radius: 20px;
+            border: 1px solid var(--primary);
+            color: var(--primary);
+            font-size: 0.9rem;
+            transition: transform 0.3s;
+        }
+
+        .skill-tag:hover {
+            transform: translateY(-3px);
+        }
+
+        .resume-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 1rem 2rem;
+            background: linear-gradient(45deg, var(--primary), #00ccff);
+            color: var(--dark-bg);
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            opacity: 0;
+            animation: popIn 1s forwards;
+            animation-delay: 1.2s;
+            transition: transform 0.3s;
+        }
+
+        .resume-btn:hover {
+            transform: scale(1.05);
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideRight {
+            from {
+                opacity: 0;
+                transform: translateX(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes popIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        /* Footer Styles */
+.footer {
+    background-color: #0a0a0a; 
+    margin-top: -90px;
+    color: #00ff9d; 
+    padding: 2rem 0; 
+    text-align: center;
+    font-family: 'Segoe UI', sans-serif; 
+}
+
+.footer p {
+    margin-top: 1rem;
+    font-size: 1rem;
+    color: var(--secondary-text); /* Subtle text color for copyright */
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .footer-content {
+        flex-direction: column;
+       
+    }
+
+    .footer-logo-img {
+        max-width: 40px; /* Smaller logo on mobile */
+    }
+}
+
+
+        /* Background Effects */
+        .gradient-blur {
+            position: fixed;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(0,255,157,0.15) 0%, rgba(0,255,157,0) 70%);
+            filter: blur(100px);
+            pointer-events: none;
+        }
+
+        .gradient-blur-1 {
+            top: -100px;
+            left: -100px;
+        }
+
+        .gradient-blur-2 {
+            bottom: -100px;
+            right: -100px;
+            background: radial-gradient(circle, rgba(0,204,255,0.15) 0%, rgba(0,204,255,0) 70%);
+        }
+        @media (max-width: 768px) {
+            .glass-nav .logo {
+                font-size: 2rem !important;
+            }
+            
+            .glass-nav .nav-link {
+                font-size: 1rem !important;
+            }
+        }
+        @media (max-width: 500px) {
+            .glass-nav .logo {
+                font-size: 2rem !important;
+            }
+            
+            .glass-nav .nav-link {
+                font-size: 1rem !important;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .name {
+                font-size: 3rem;
+            }
+            
+            .bio {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="glass-nav">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="p1-removebg-preview.png" alt="Logo" class="logo-image">
+            </a>
+            
+            
+            <div class="nav-links">
+                <a href="index.html" class="nav-link hover-underline">Home</a>
+                <a href="portfolio.html" class="nav-link hover-underline">Portfolio</a>
+                <a href="blog.html" class="nav-link hover-underline">Blog</a>
+                <a href="contact.php" class="nav-link hover-underline">Contact</a>
+                <!-- <a href="form-handler.php" class="nav-link button-link">Form Hub</a> -->
+            </div>
+    
+            <div class="menu-toggle">
+                <div class="hamburger"></div>
+            </div>
+        </div>
+    </nav>
+    <div class="gradient-blur gradient-blur-1"></div>
+    <div class="gradient-blur gradient-blur-2"></div>
+
+    <div class="container">
+        <div class="hero-content">
+            <h1 class="name">David Fashakin</h1>
+            <h2 class="title">DATA ANALYST</h2>
+            <p class="bio">
+                I'm currently a full time data analyst with expertise in transforming raw data 
+                into actionable insights. Specializing in data visualization and business 
+                intelligence solutions.
+            </p>
+            
+            <div class="skills">
+                <span class="skill-tag">Excel</span>
+                <span class="skill-tag">SQL</span>
+                <span class="skill-tag">Tableau</span>
+                <span class="skill-tag">Power BI</span>
+                <span class="skill-tag">Python</span>
+            </div>
+
+            <a href="resume.pdf" download="resume.pdf" class="resume-btn">
+                <i class="fas fa-download"></i>
+                DOWNLOAD RESUME
+            </a>
+            
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2025 Your Name. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Add smooth scroll behavior
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add random floating animation to skill tags
+        document.querySelectorAll('.skill-tag').forEach(tag => {
+            tag.style.animation = `float ${Math.random() * 2 + 3}s ease-in-out infinite`;
+        });
+    </script>
+</body>
+</html>

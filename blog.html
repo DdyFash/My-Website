@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Your Name</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #00ff9d;
+            --dark-bg: #000000;
+            --card-bg: #111111;
+            --text: #ffffff;
+            --secondary-text: #888;
+        }
+        .logo-image {
+            width: 100px; /* Adjust the size as needed */
+            height: auto; /* Keeps the aspect ratio intact */
+            border-radius: 15px; /* Adjust the value for more/less roundness */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+/* Navigation */
+.glass-nav {
+    background: rgba(10, 10, 10, 0.95);
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-family: Cormorant Garamond;
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--primary);
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-link {
+    color: var(--text);
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: var(--primary); /* Change text color on hover */
+}
+
+.nav-link::after {
+    content: "";
+    position: absolute;
+    bottom: -5px; /* Position the line below the text */
+    left: 0;
+    width: 0; /* Initially, the width is 0 */
+    height: 2px; /* Line thickness */
+    background-color: var(--primary); /* Same color as text */
+    transition: width 0.3s ease; /* Smooth transition for the line width */
+}
+
+.nav-link:hover::after {
+    width: 100%; /* Expand the width to 100% on hover */
+}
+
+
+
+        /* Blog Section */
+        .blog-section {
+            padding: 100px 0 50px;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--primary);
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .blog-post {
+            background: var(--card-bg);
+            border: 1px solid rgba(0,255,157,0.1);
+            border-radius: 15px;
+            padding: 2rem;
+            transition: transform 0.3s;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .blog-post.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .blog-post:hover {
+            transform: translateY(-5px);
+        }
+
+        .post-meta {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            color: var(--secondary-text);
+            font-size: 0.9rem;
+        }
+
+        .post-category {
+            background: rgba(0,255,157,0.1);
+            color: var(--primary);
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+
+        .post-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text);
+        }
+
+        .post-excerpt {
+            color: var(--secondary-text);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .read-more {
+            color: var(--primary);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: gap 0.3s;
+        }
+
+        .read-more:hover {
+            gap: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="images\p1-removebg-preview.png" alt="Logo" class="logo-image">
+            </a>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="blog.html" class="nav-link">Blog</a>
+                <a href="contact.php" class="nav-link">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="blog-section">
+        <div class="container">
+            <h1 class="section-title">Latest Posts</h1>
+            
+            <div class="blog-grid">
+                <!-- Blog Post 1 -->
+                <article class="blog-post">
+                    <div class="post-meta">
+                        <span class="post-category">Data Analysis</span>
+                        <time>March 5, 2025</time>
+                    </div>
+                    <h2 class="post-title">Mastering Data Visualization Techniques</h2>
+                    <p class="post-excerpt">Discover advanced methods for creating impactful data visualizations that drive business decisions...</p>
+                    <a href="blogpost\blogpost1.html" class="read-more">
+                        Read More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </article>
+
+                <!-- Blog Post 2 -->
+                <article class="blog-post">
+                    <div class="post-meta">
+                        <span class="post-category">Data Analysis</span>
+                        <time>March 5, 2025</time>
+                    </div>
+                    <h2 class="post-title">Exploring Data Analytics: Techniques and Best Practices for Success</h2>
+                    <p class="post-excerpt">Data analytics is a critical tool for making informed business decisions. By leveraging techniques like descriptive....</p>
+                    <a href="blogpost\blogpost2.html" class="read-more">
+                        Read More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </article>
+                <!-- Blog Post 3 -->
+                <article class="blog-post">
+                    <div class="post-meta">
+                        <span class="post-category">SQL Tips</span>
+                        <time>March 10, 2024</time>
+                    </div>
+                    <h2 class="post-title">Optimizing SQL Queries</h2>
+                    <p class="post-excerpt">Learn how to improve query performance and efficiency with large datasets...</p>
+                    <a href="#" class="read-more">
+                        Read More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </article>
+                <!-- Blog Post 4 -->
+                <article class="blog-post">
+                    <div class="post-meta">
+                        <span class="post-category">SQL Tips</span>
+                        <time>March 10, 2024</time>
+                    </div>
+                    <h2 class="post-title">Optimizing SQL Queries</h2>
+                    <p class="post-excerpt">Learn how to improve query performance and efficiency with large datasets...</p>
+                    <a href="#" class="read-more">
+                        Read More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </article>
+                <!-- Blog Post 5 -->
+                <article class="blog-post">
+                    <div class="post-meta">
+                        <span class="post-category">SQL Tips</span>
+                        <time>March 10, 2024</time>
+                    </div>
+                    <h2 class="post-title">Optimizing SQL Queries</h2>
+                    <p class="post-excerpt">Learn how to improve query performance and efficiency with large datasets...</p>
+                    <a href="#" class="read-more">
+                        Read More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </article>
+                <!-- Blog Post 6 -->
+                <article class="blog-post">
+                    <div class="post-meta">
+                        <span class="post-category">SQL Tips</span>
+                        <time>March 10, 2024</time>
+                    </div>
+                    <h2 class="post-title">Optimizing SQL Queries</h2>
+                    <p class="post-excerpt">Learn how to improve query performance and efficiency with large datasets...</p>
+                    <a href="#" class="read-more">
+                        Read More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </article>
+
+                <!-- Add more posts as needed -->
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Scroll animation for blog posts
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        });
+
+        document.querySelectorAll('.blog-post').forEach(post => {
+            observer.observe(post);
+        });
+
+        // Mobile menu toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        if (menuToggle) {
+            menuToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
+        }
+    </script>
+</body>
+</html>
